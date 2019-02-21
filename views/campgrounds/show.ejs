@@ -1,4 +1,6 @@
 <% include ../partials/header %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="stylesheets/main.css">
     <div class="row">
         <div class="col-md-3">
             <p class="lead">YelpCamp</p>
@@ -23,7 +25,6 @@
                         <a class="btn btn-danger" href="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">Delete</a>
                     <% } %>
                 </div>
-            <!--</div>-->
             <div class="well">
                 <div class="text-right">
                     <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
@@ -49,6 +50,5 @@
                 <% }) %>
             </div>
         </div>
-    <!--</div>-->
 
 <% include ../partials/footer %>
