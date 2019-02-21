@@ -12,7 +12,7 @@ router.get("/", function(req, res){
     res.render("landing");
 });
 
-// show register form
+//show register form
 router.get("/register", function(req, res){
    res.render("register"); 
 });
@@ -62,6 +62,18 @@ router.get("/logout", function(req, res){
    req.logout();
    req.flash("success", "See you later!");
    res.redirect("/campgrounds");
+});
+
+
+//user profile
+router.get("/users/:id", function(req, res){
+  User.findById(req.params.id, function(err, foundUser){
+    if(err){
+      req.flash("error", "Something went wrong.");
+      res.redirect("/");
+    }
+    res.render("users/show", {user: foundUser});
+  });
 });
 
 //show forgot password form
