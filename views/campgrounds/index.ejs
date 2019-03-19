@@ -1,14 +1,15 @@
 <% include ../partials/header %> 
-     <header class="jumbotron">
-         <div class="container">
-             <h1><span class="glyphicon glyphicon-tree-conifer"></span> Welcome To YelpCamp!</h1>
-             <p>View our hand-picked campgrounds from all over the world</p>
+</div>
+     <header class="jumbotron jumbotron-fluid">
+         <div class="container text-center">
+             <h1 class="text-shadow"><span class="glyphicon glyphicon-tree-conifer"></span> Welcome To YelpCamp!</h1>
+             <p class="text-shadow">View our hand-picked campgrounds from all over the world</p>
              <p>
                 <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
              </p>
          </div>
      </header>
-     
+     <div class="container">
      <div class="row text-center" id="campground-grid">
          
          <div class="col-md-12">
@@ -23,6 +24,7 @@
                   <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
                   <div class="card-body">
                     <h5 class="card-title"><%= campground.name %></h5>
+                    <p><i class="fas fa-map-marker-alt"></i><%= campground.location %></p>
                     <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
                   </div>
                   
@@ -30,5 +32,5 @@
             </div>
         <% }); %>
     </div>
-
+</div>
 <% include ../partials/footer %>

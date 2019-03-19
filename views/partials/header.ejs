@@ -10,7 +10,7 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <!--<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">-->
-          <a class="navbar-brand" href="/"><i class="fas fa-campground"></i> Yelp Camp</a>
+          <a class="navbar-brand" href="/"><i class="fas fa-campground"></i> YelpCamp</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,7 +25,7 @@
             <div class="navbar-collapse justify-content-md-center">
             <form class="form-inline mt-2 mt-md-0" action="/campgrounds" method="GET">
               <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search">
-              <button class="btn btn-light my-2 my-sm-0" type="submit" value="Search">Search</button>
+              <button class="btn btn-primary my-2 my-sm-0" type="submit" value="Search">Search</button>
             </form>
             </div>
             
@@ -34,9 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login  <i class="fa fa-user"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Sign Up  <i class="fa fa-user-plus"></i></a>
-                    </li>
+                    <!--<li class="nav-item">-->
+                    <!--    <a class="nav-link" href="/register">Sign Up  <i class="fa fa-user-plus"></i></a>-->
+                    <!--</li>-->
                 <% } else { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/users/<%= currentUser.id %>">My profile</a>

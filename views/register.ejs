@@ -5,39 +5,47 @@
         <div class="col-md-12 text-center">
             <h1>Create an account</h1>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-lg-8 box">
             <form action="/register" method="post">
-                <div class="form-group">
-                    <label for="Username">Username</label>
-                    <input class="form-control" type="text" name="username" placeholder="username">
+                <div class="row">
+                    <div class="col">
+                        <label for="Username">Username</label>
+                        <input class="form-control" type="text" name="username" placeholder="username">
+                    </div>
+                    <div class="col">
+                        <label for="Password">Password</label>
+                        <input class="form-control" type="password" name="password" placeholder="password">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input class="form-control" type="password" name="password" placeholder="password">
+                <div class="row">
+                    <div class="col">
+                        <label for="FirstName">First Name</label>
+                        <input class="form-control" type="text" name="firstName" placeholder="first name">
+                    </div>
+                    <div class="col">
+                        <label for="LastName">Last Name</label>
+                        <input class="form-control" type="text" name="lastName" placeholder="last name">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="FirstName">First Name</label>
-                    <input class="form-control" type="text" name="firstName" placeholder="first name">
+                 <div class="row">
+                    <div class="col">
+                        <label for="Email">E-mail</label>
+                        <input class="form-control" type="email" name="email" placeholder="email">
+                    </div>
+                    <div class="col">
+                        <label for="Username">Avatar</label>
+                        <input class="form-control" type="text" name="avatar" placeholder="avatar url">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="LastName">Last Name</label>
-                    <input class="form-control" type="text" name="lastName" placeholder="last name">
-                </div>
-                <div class="form-group">
-                    <label for="Email">E-mail</label>
-                    <input class="form-control" type="email" name="email" placeholder="email">
-                </div>
-                <div class="form-group">
-                    <label for="Username">Avatar</label>
-                    <input class="form-control" type="text" name="avatar" placeholder="avatar url">
-                </div>
-                <div class="form-group">
-                    <label for="Username">Admin Code</label>
-                    <input class="form-control" type="text" name="adminCode" placeholder="admin code">
+                <div class="row">
+                    <div class="col">
+                        <label for="Username">Admin Code</label>
+                        <input class="form-control" type="text" name="adminCode" placeholder="admin code">
+                    </div>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
             </form>
-                <div class="form-signin">
+                <div class="form-goback">
                 <a href="/campgrounds">Go Back</a>
             </div>
         </div>

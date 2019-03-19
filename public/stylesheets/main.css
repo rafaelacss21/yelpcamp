@@ -52,3 +52,90 @@ footer {
     height: 400px;
     width: 100%;
 }
+
+.box {
+  padding: 15px 20px;
+  background-color: #343a40;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.box input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.box label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.form-goback {
+    padding: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-block {
+    display: block;
+    width: 50%;
+    margin: 10px auto 0 auto;
+}
+
+.box a{
+  color: #9a9da0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2f5884;
+    border-color: #2f5884;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #4d749e;
+    border-color: #4d749e;
+}
+
+.jumbotron {
+    background-image: url('https://images.unsplash.com/photo-1463703067310-3e4f04a0e9ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); 
+    background-size: 100% 100%;
+    height: 500px;
+    margin-top: -1rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.jumbotron .container {
+    color: white;
+    /*opacity: 0.7;*/
+    margin-top: 80px;
+}
+
+.text-shadow {
+    text-shadow: 0 4px 4px rgba(185, 185, 185, 0.6);
+}
+
+h1.text-shadow {
+    font-size: 3.5rem;
+}
+
+p.text-shadow {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+
+}
+
+.card-body p {
+    font-size: small;
+}
+
+.card-img-top {
+    height: 170px;
+}
