@@ -44,8 +44,6 @@ router.get("/", function(req, res){
 });
 
 
-
-
 //CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
     // get data from form and add to campgrounds array
@@ -98,7 +96,7 @@ router.get("/:id", function(req, res){
     });
 });
 
-// EDIT - edit info of a campground
+// EDIT - edit campground
 router.get("/:id/edit", middleware.checkUserCampground, function(req, res){
     //find the campground with provided ID
     Campground.findById(req.params.id, function(err, foundCampground){
@@ -112,7 +110,7 @@ router.get("/:id/edit", middleware.checkUserCampground, function(req, res){
 });
 
 
-// UPDATE CAMPGROUND ROUTE
+// UPDATE - update campground
 router.put("/:id", function(req, res){
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
@@ -137,7 +135,7 @@ router.put("/:id", function(req, res){
 
 
 // DELETE - delete campground
-router.delete("/:id", function(req, res){
+router.delete("/:id", middleware.checkUserCampground, function(req, res){
    Campground.findByIdAndRemove(req.params.id, function(err){
       if(err){
             req.flash("error", err.message);

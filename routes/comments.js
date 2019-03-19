@@ -4,7 +4,7 @@ var Campground = require("../models/campground");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
-//Comments New
+//ADD new comment
 router.get("/new", middleware.isLoggedIn, function(req, res){
     // find campground by id
     console.log(req.params.id);
@@ -17,7 +17,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
     })
 });
 
-//Comments Create
+//CREATE - add new comment to db
 router.post("/",middleware.isLoggedIn,function(req, res){
    //lookup campground using ID
    Campground.findById(req.params.id, function(err, campground){
@@ -45,6 +45,7 @@ router.post("/",middleware.isLoggedIn,function(req, res){
    });
 });
 
+// EDIT - edit comment
 router.get("/:commentId/edit", middleware.isLoggedIn, function(req, res){
     // find campground by id
     Comment.findById(req.params.commentId, function(err, comment){
@@ -56,6 +57,7 @@ router.get("/:commentId/edit", middleware.isLoggedIn, function(req, res){
     })
 });
 
+// UPDATE - update comment
 router.put("/:commentId", function(req, res){
    Comment.findByIdAndUpdate(req.params.commentId, req.body.comment, function(err, comment){
        if(err){
@@ -66,6 +68,7 @@ router.put("/:commentId", function(req, res){
    }); 
 });
 
+// DELETE - delete comment
 router.delete("/:commentId",middleware.checkUserComment, function(req, res){
     Comment.findByIdAndRemove(req.params.commentId, function(err){
         if(err){
