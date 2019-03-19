@@ -1,13 +1,6 @@
-.thumbnail img {
-    width: 100%;
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
 }
 
 footer {
@@ -52,4 +45,10 @@ footer {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
 }
