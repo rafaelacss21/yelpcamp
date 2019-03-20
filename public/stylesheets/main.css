@@ -4,10 +4,12 @@ body {
 }
 
 footer {
-    position: absolute; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 15px auto;
+    /*color: white;*/
+    position: absolute;
+    width: 100%;
+    /*background-color: #1b272d;*/
+    text-align: center;
+    padding: 15px 0;
 }
 
 .btn-sm {
@@ -55,7 +57,7 @@ footer {
 
 .box {
   padding: 15px 20px;
-  background-color: #343a40;
+  background-color: #1b272d;;
   color: #FFFFFF;
   border-radius: 5px;
 }
@@ -136,6 +138,14 @@ p.text-shadow {
     font-size: small;
 }
 
-.card-img-top {
-    height: 170px;
+/*.card-img-top .index {*/
+/*    height: 170px;*/
+/*}*/
+
+.bg-dark {
+    background-color: #1b272d!important;
+}
+
+.navbar-collapse .justify-content-md-center{
+    margin-left: -110px;
 }
