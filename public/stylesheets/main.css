@@ -146,6 +146,6 @@ p.text-shadow {
     background-color: #1b272d!important;
 }
 
-.navbar-collapse .justify-content-md-center{
+.form-inline .mt-2 .mt-md-0 {
     margin-left: -110px;
 }
