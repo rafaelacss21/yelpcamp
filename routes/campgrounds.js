@@ -69,9 +69,15 @@ router.get("/", function(req, res){
 ////////////////////////////////////
 //CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res) {
-    cloudinary.uploader.upload(req.file.path, function(result) {
+    cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
+        if(err) {
+        req.flash('error', err.message);
+        return res.redirect('back');
+      }
       // add cloudinary url for the image to the campground object under image property
       req.body.campground.image = result.secure_url;
+      // add image's public_id to campground object
+      req.body.campground.imageId = result.public_id;
       // add author to campground
       req.body.campground.author = {
         id: req.user._id,
@@ -119,8 +125,8 @@ router.get("/:id", function(req, res){
     });
 });
 
-//////////////////////////
-// EDIT - edit campground
+//////////////////////////////////
+// EDIT - show form to edit campground
 router.get("/:id/edit", middleware.checkUserCampground, function(req, res){
     //find the campground with provided ID
     Campground.findById(req.params.id, function(err, foundCampground){
@@ -135,12 +141,7 @@ router.get("/:id/edit", middleware.checkUserCampground, function(req, res){
 
 /////////////////////////////
 // UPDATE - update campground
-router.put("/:id", upload.single('image'), function(req, res){
-    // if (req.file) {
-    //     cloudinary.v2.uploader.destroy(campground.image_id, function(err, result){
-            
-    //     }
-    // }
+router.put("/:id", function(req, res){
   geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
       req.flash('error', 'Invalid address');
@@ -150,6 +151,7 @@ router.put("/:id", upload.single('image'), function(req, res){
     var lng = data[0].longitude;
     var location = data[0].formattedAddress;
     var newData = {name: req.body.name, price: req.body.price, image: req.body.image, description: req.body.description, location: location, lat: lat, lng: lng};
+    
     Campground.findByIdAndUpdate(req.params.id, newData, function(err, campground){
         if(err){
             req.flash("error", err.message);
