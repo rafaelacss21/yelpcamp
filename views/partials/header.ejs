@@ -8,7 +8,7 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-3">
         <!--<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">-->
           <a class="navbar-brand" href="/"><i class="fas fa-campground"></i> YelpCamp</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,18 +16,17 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+              <li class="nav-item active">
                 <a class="nav-link" href="/campgrounds">Home<span class="sr-only">(current)</span></a>
-              </li>
               </li>
             </ul>
             
-            <div class="navbar-collapse justify-content-md-center">
-            <form class="form-inline mt-2 mt-md-0 search" action="/campgrounds" method="GET">
-              <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search">
-              <button class="btn btn-primary my-2 my-sm-0" type="submit" value="Search">Search</button>
-            </form>
-            </div>
+            <!--<div class="justify-content-md-center d-none d-lg-block">-->
+            <!--<form class="form-inline mt-2 mt-md-0 search" action="/campgrounds" method="GET">-->
+            <!--  <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search">-->
+            <!--  <button class="btn btn-primary my-2 my-sm-0" type="submit" value="Search">Search</button>-->
+            <!--</form>-->
+            <!--</div>-->
             
             <ul class="navbar-nav mt-2 mt-md-0">
                 <% if(!currentUser){ %>
