@@ -8,7 +8,7 @@ function changeBG(){
       ];
     
     if(counter === imgs.length) counter = 0;
-    $("body").css("background-image", imgs[counter]);
+    $(".max-height").css("background-image", imgs[counter]);
 
     counter++;
 }
