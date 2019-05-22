@@ -6,8 +6,8 @@ body {
 footer {
     position: absolute;
     width: 100%;
-    /*color: white;*/
-    /*background-color: #1b272d;*/
+    color: white;
+    background-color: #1b272d;
     text-align: center;
     padding: 15px 0;
 }
